@@ -65,9 +65,60 @@ body::after {
     radial-gradient(ellipse 40% 70% at 105% 50%, rgba(0,0,0,0.15) 0%, transparent 55%);
 }
 
+/* ANNOUNCEMENT BANNER */
+.announcement-bar {
+  position: fixed; top: 0; left: 0; right: 0; z-index: 200;
+  height: 42px;
+  display: flex; align-items: center; justify-content: center; gap: 1.25rem;
+  background: linear-gradient(90deg, #0e4f5e 0%, #0d6e82 40%, #0a5a6e 60%, #0e4f5e 100%);
+  border-bottom: 1px solid rgba(34,211,238,0.35);
+  overflow: hidden;
+}
+.announcement-bar::before {
+  content: '';
+  position: absolute; inset: 0; pointer-events: none;
+  background: repeating-linear-gradient(
+    90deg,
+    transparent,
+    transparent 120px,
+    rgba(34,211,238,0.05) 120px,
+    rgba(34,211,238,0.05) 121px
+  );
+}
+.announcement-pill {
+  font-family: var(--body); font-size: 0.7rem; font-weight: 700;
+  letter-spacing: 0.1em; text-transform: uppercase;
+  color: #020d12; background: var(--blue-bright);
+  padding: 0.2rem 0.65rem;
+  clip-path: polygon(4px 0%, 100% 0%, calc(100% - 4px) 100%, 0% 100%);
+  white-space: nowrap; flex-shrink: 0;
+  animation: pillPulse 2.5s ease-in-out infinite;
+}
+@keyframes pillPulse {
+  0%, 100% { box-shadow: 0 0 0 0 rgba(34,211,238,0.4); }
+  50% { box-shadow: 0 0 12px 3px rgba(34,211,238,0.25); }
+}
+.announcement-text {
+  font-family: var(--body); font-size: 0.85rem; font-weight: 500;
+  color: var(--blue-pale); letter-spacing: 0.02em; white-space: nowrap;
+}
+.announcement-text strong { color: #fff; font-weight: 700; }
+.announcement-sep {
+  width: 4px; height: 4px; background: rgba(34,211,238,0.5); border-radius: 50%;
+  flex-shrink: 0;
+}
+.announcement-link {
+  font-family: var(--body); font-size: 0.8rem; font-weight: 600;
+  color: var(--blue-bright); text-decoration: none; letter-spacing: 0.05em;
+  border-bottom: 1px solid rgba(34,211,238,0.4);
+  padding-bottom: 1px; transition: color 0.2s, border-color 0.2s;
+  white-space: nowrap; flex-shrink: 0;
+}
+.announcement-link:hover { color: #fff; border-color: rgba(255,255,255,0.6); }
+
 /* NAV */
 nav {
-  position: fixed; top: 0; left: 0; right: 0; z-index: 100;
+  position: fixed; top: 42px; left: 0; right: 0; z-index: 100;
   height: 64px;
   display: flex; align-items: center; justify-content: space-between;
   padding: 0 3rem;
@@ -116,7 +167,7 @@ nav {
 .hero {
   min-height: 100vh;
   display: grid; grid-template-columns: 1fr 1fr;
-  align-items: center; padding-top: 64px;
+  align-items: center; padding-top: 106px;
   position: relative; overflow: hidden;
 }
 .hero-bg {
@@ -670,6 +721,9 @@ footer {
 @media (max-width: 600px) {
   .portfolio-grid { grid-template-columns: 1fr; }
   .teams-grid { grid-template-columns: 1fr 1fr; }
+  .announcement-text { display: none; }
+  .announcement-sep { display: none; }
+  nav { top: 42px; }
 }
 
 
@@ -745,6 +799,13 @@ footer {
 </style>
 </head>
 <body>
+
+<div class="announcement-bar">
+  <span class="announcement-pill">Coming Soon</span>
+  <span class="announcement-text"><strong>Custom Hardware AI</strong> — Plug &amp; Play. Run RILbots locally on dedicated hardware.</span>
+  <span class="announcement-sep"></span>
+  <a href="#contact" class="announcement-link">Get Notified →</a>
+</div>
 
 <nav>
   <a href="#home" class="nav-logo">
