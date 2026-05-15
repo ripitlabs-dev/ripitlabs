@@ -796,6 +796,99 @@ footer {
   .featured-card.hero-card { grid-column: span 1; }
 }
 
+
+/* STANDARDS SECTION */
+.standards-section {
+  background: var(--black);
+  border-top: 1px solid var(--border);
+  border-bottom: 1px solid var(--border);
+  padding: 7rem 3rem;
+  position: relative; overflow: hidden;
+}
+.standards-section::before {
+  content: '';
+  position: absolute; inset: 0; pointer-events: none;
+  background:
+    radial-gradient(ellipse 60% 70% at 100% 0%, rgba(6,182,212,0.1) 0%, transparent 60%),
+    radial-gradient(ellipse 50% 60% at 0% 100%, rgba(6,182,212,0.07) 0%, transparent 55%);
+}
+.standards-header { max-width: 720px; margin-bottom: 4rem; position: relative; }
+.standards-header p { color: var(--silver); font-size: 1.08rem; line-height: 1.85; font-weight: 400; margin-top: 0.75rem; }
+.standards-grid {
+  display: grid; grid-template-columns: repeat(2, 1fr);
+  gap: 1.5px; background: var(--border);
+  border: 1px solid var(--border);
+  clip-path: polygon(0 0, calc(100% - 16px) 0, 100% 16px, 100% 100%, 16px 100%, 0 calc(100% - 16px));
+  overflow: hidden; position: relative;
+}
+.standard-card {
+  background: var(--surface);
+  padding: 3rem;
+  display: flex; flex-direction: column; gap: 1.25rem;
+  position: relative; overflow: hidden;
+  transition: background 0.25s;
+}
+.standard-card:hover { background: var(--surface-2); }
+.standard-card::after {
+  content: ''; position: absolute; top: 0; left: 0; right: 0; height: 3px;
+  background: linear-gradient(90deg, var(--blue), var(--blue-bright), var(--blue-pale));
+  opacity: 0; transition: opacity 0.3s;
+}
+.standard-card:hover::after { opacity: 1; }
+.standard-watermark {
+  position: absolute; bottom: -1rem; right: 1.5rem;
+  font-family: var(--display); font-weight: 800;
+  font-size: 7rem; line-height: 1; letter-spacing: 0.02em;
+  color: var(--blue-bright); opacity: 0.04;
+  text-transform: uppercase; pointer-events: none;
+  transition: opacity 0.3s;
+}
+.standard-card:hover .standard-watermark { opacity: 0.07; }
+.standard-tag {
+  font-family: var(--body); font-size: 0.7rem; font-weight: 700;
+  letter-spacing: 0.14em; text-transform: uppercase;
+  color: var(--blue-bright); display: flex; align-items: center; gap: 0.6rem;
+}
+.standard-tag::before {
+  content: ''; display: inline-block; width: 20px; height: 1px;
+  background: var(--blue-bright);
+}
+.standard-name {
+  font-family: var(--display); font-weight: 800;
+  font-size: clamp(1.6rem, 2.5vw, 2.2rem);
+  text-transform: uppercase; letter-spacing: 0.04em;
+  color: var(--white); line-height: 1.1;
+}
+.standard-abbr {
+  font-family: var(--mono); font-size: 0.75rem; letter-spacing: 0.16em;
+  color: var(--blue-mid); text-transform: uppercase; margin-top: -0.5rem;
+}
+.standard-desc {
+  font-size: 0.98rem; color: var(--silver); line-height: 1.8; font-weight: 400;
+}
+.standard-bullets {
+  list-style: none; display: flex; flex-direction: column; gap: 0.5rem;
+  margin-top: 0.25rem;
+}
+.standard-bullets li {
+  font-size: 0.88rem; color: var(--muted); line-height: 1.5;
+  display: flex; gap: 0.8rem; align-items: baseline;
+}
+.standard-bullets li::before { content: '//'; color: var(--blue-bright); font-family: var(--mono); font-size: 0.7rem; flex-shrink: 0; opacity: 0.8; }
+.standard-badge {
+  display: inline-flex; align-items: center; gap: 0.5rem;
+  font-family: var(--body); font-size: 0.72rem; font-weight: 700;
+  letter-spacing: 0.1em; text-transform: uppercase;
+  color: var(--blue-bright); border: 1px solid rgba(34,211,238,0.3);
+  background: rgba(34,211,238,0.06); padding: 0.3rem 0.75rem;
+  align-self: flex-start; margin-top: auto; padding-top: 0.3rem;
+}
+.standard-badge::before {
+  content: ''; width: 6px; height: 6px; background: var(--blue-bright);
+  border-radius: 50%; box-shadow: 0 0 8px rgba(34,211,238,0.9);
+}
+@media (max-width: 900px) { .standards-grid { grid-template-columns: 1fr; } }
+
 </style>
 </head>
 <body>
@@ -1052,6 +1145,85 @@ footer {
   <div class="rilcoin-sep"></div>
   <div class="rilcoin-detail"><strong>Distribution</strong> 40% Treasury · 30% Liquidity · 20% Team (vested) · 10% Advisors</div>
 </div>
+
+<section class="standards-section" id="standards">
+  <div class="standards-header reveal">
+    <p class="label">Built to the Highest Standards</p>
+    <h2>Government grade. <em>Cryptographically proven.</em></h2>
+    <p>Rip It Labs builds to the standards that matter — from international financial infrastructure requirements to Department of Defense security specifications. Every platform we ship is designed for environments where failure is not an option.</p>
+  </div>
+  <div class="standards-grid">
+
+    <div class="standard-card reveal">
+      <div class="standard-watermark">ISO</div>
+      <div class="standard-tag">Financial Infrastructure</div>
+      <div>
+        <div class="standard-name">ISO 20022</div>
+        <div class="standard-abbr">International Financial Messaging Standard</div>
+      </div>
+      <p class="standard-desc">The global standard for financial messaging — adopted by SWIFT, the Federal Reserve, the ECB, and every major central bank network. Our blockchain infrastructure and RILCOIN transaction architecture are built to ISO 20022 data model specifications, ensuring full interoperability with next-generation payment rails.</p>
+      <ul class="standard-bullets">
+        <li>Structured transaction data — machine-readable, rich metadata on every payment</li>
+        <li>Compatible with SWIFT gpi, Fedwire, CHIPS, and SEPA instant payment networks</li>
+        <li>Supports cross-border settlement, securities clearing, and trade finance workflows</li>
+        <li>Aligned with CBDC infrastructure standards currently being adopted worldwide</li>
+      </ul>
+      <span class="standard-badge">Compliant Architecture</span>
+    </div>
+
+    <div class="standard-card reveal">
+      <div class="standard-watermark">POE</div>
+      <div class="standard-tag">Blockchain Verification</div>
+      <div>
+        <div class="standard-name">Proof of Execution</div>
+        <div class="standard-abbr">On-Chain Agent Action Verification</div>
+      </div>
+      <p class="standard-desc">Every RILBOT agent action generates an immutable, cryptographically signed record on Base mainnet. Not a log — a cryptographic proof. Proof of Execution means every task completed, every decision made, and every output delivered can be independently verified without trusting any central authority.</p>
+      <ul class="standard-bullets">
+        <li>Every agent action hash-anchored to Base mainnet — tamper-evident by design</li>
+        <li>Cryptographic signature chain — who ran it, what it did, when it completed</li>
+        <li>Independently verifiable by any third party without access to our systems</li>
+        <li>Full audit trail for compliance, legal, and regulatory review at any time</li>
+      </ul>
+      <span class="standard-badge">On-Chain Verified</span>
+    </div>
+
+    <div class="standard-card reveal">
+      <div class="standard-watermark">DOD</div>
+      <div class="standard-tag">Security Specification</div>
+      <div>
+        <div class="standard-name">D.O.D. Grade</div>
+        <div class="standard-abbr">Department of Defense Security Standards</div>
+      </div>
+      <p class="standard-desc">We build to Department of Defense security specifications — the most rigorous cybersecurity framework in existence. From data encryption standards to access control models and supply chain integrity, our architecture is designed to meet the requirements of the most sensitive operational environments on earth.</p>
+      <ul class="standard-bullets">
+        <li>AES-256 encryption at rest and in transit — DoD-approved cryptographic standards</li>
+        <li>Zero-trust architecture — no implicit trust, every access request verified</li>
+        <li>NIST SP 800-171 and CMMC-aligned controls for controlled unclassified information</li>
+        <li>Air-gap capable deployment for classified and sensitive government environments</li>
+      </ul>
+      <span class="standard-badge">Defense Grade</span>
+    </div>
+
+    <div class="standard-card reveal">
+      <div class="standard-watermark">GOV</div>
+      <div class="standard-tag">Government Infrastructure</div>
+      <div>
+        <div class="standard-name">Government Grade Blockchain</div>
+        <div class="standard-abbr">Sovereign, Auditable, Tamper-Proof Ledger</div>
+      </div>
+      <p class="standard-desc">Purpose-built blockchain infrastructure for government and public sector deployment. Sovereign ledger design means no dependence on private operators. Every transaction is publicly auditable, every record is tamper-proof, and the entire system operates under rules that cannot be changed by any single party — including us.</p>
+      <ul class="standard-bullets">
+        <li>FedRAMP-aligned cloud architecture for U.S. federal agency deployment</li>
+        <li>Immutable audit ledger — meets FISMA, FIPS 140-2, and SOC 2 Type II requirements</li>
+        <li>Permissioned consortium support for multi-agency shared infrastructure</li>
+        <li>Sovereign key management — government retains full custody of cryptographic keys</li>
+      </ul>
+      <span class="standard-badge">Government Ready</span>
+    </div>
+
+  </div>
+</section>
 
 <section class="portfolio-section" id="portfolio">
   <div class="portfolio-header reveal">
