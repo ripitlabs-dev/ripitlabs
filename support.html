@@ -1,0 +1,269 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width,initial-scale=1"/>
+<title>Support — Rip It Labs</title>
+<meta name="description" content="Rip It Labs support center — get help with RILBOT, Strut, SoulCoach, YTax, and all our platforms."/>
+<link rel="preconnect" href="https://fonts.googleapis.com"/>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet"/>
+<style>
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+:root{--black:#111827;--deep:#1a2235;--surface:#1e2a3a;--blue:#0891b2;--cyan:#22d3ee;--white:#f0fdff;--muted:#7db8c8;--border:rgba(6,182,212,.18)}
+body{font-family:'Inter',system-ui,sans-serif;background:var(--black);color:var(--white);line-height:1.6}
+a{color:var(--cyan);text-decoration:none}
+a:hover{text-decoration:underline}
+nav{background:rgba(17,24,39,.95);backdrop-filter:blur(12px);border-bottom:1px solid var(--border);padding:0 40px;height:60px;display:flex;align-items:center;justify-content:space-between;position:sticky;top:0;z-index:100}
+.logo{font-weight:800;font-size:18px;color:var(--white);letter-spacing:-.5px}
+.logo span{color:var(--cyan)}
+.nav-back{font-size:13px;color:var(--muted)}
+.nav-back:hover{color:var(--white)}
+
+/* Hero */
+.hero{text-align:center;padding:80px 40px 60px;max-width:700px;margin:0 auto}
+.hero-badge{display:inline-block;padding:5px 14px;border-radius:20px;background:rgba(6,182,212,.12);border:1px solid var(--border);font-size:12px;font-weight:700;color:var(--cyan);letter-spacing:.5px;text-transform:uppercase;margin-bottom:20px}
+.hero h1{font-size:42px;font-weight:900;letter-spacing:-1.5px;margin-bottom:16px}
+.hero p{font-size:17px;color:var(--muted);line-height:1.8}
+
+/* Search bar */
+.search-wrap{max-width:560px;margin:32px auto 0;position:relative}
+.search-wrap input{
+  width:100%;padding:16px 20px 16px 48px;
+  background:var(--surface);border:1px solid var(--border);border-radius:12px;
+  color:var(--white);font-size:15px;font-family:inherit;outline:none;
+  transition:border-color .2s;
+}
+.search-wrap input::placeholder{color:var(--muted)}
+.search-wrap input:focus{border-color:var(--cyan)}
+.search-wrap svg{position:absolute;left:16px;top:50%;transform:translateY(-50%);color:var(--muted)}
+
+/* Contact cards */
+.contact-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:20px;max-width:960px;margin:60px auto 0;padding:0 40px}
+.contact-card{
+  background:var(--surface);border:1px solid var(--border);border-radius:14px;
+  padding:28px;text-align:center;transition:border-color .2s;
+}
+.contact-card:hover{border-color:rgba(6,182,212,.4)}
+.contact-icon{font-size:36px;margin-bottom:14px}
+.contact-card h3{font-size:17px;font-weight:700;margin-bottom:8px}
+.contact-card p{font-size:13px;color:var(--muted);line-height:1.6;margin-bottom:20px}
+.contact-btn{
+  display:inline-block;padding:10px 22px;border-radius:8px;
+  background:rgba(6,182,212,.12);border:1px solid var(--border);
+  color:var(--cyan);font-size:13px;font-weight:700;
+  transition:background .15s;
+}
+.contact-btn:hover{background:rgba(6,182,212,.2);text-decoration:none}
+.contact-badge{display:inline-block;font-size:11px;color:var(--muted);margin-top:10px}
+
+/* FAQ */
+.faq-section{max-width:760px;margin:80px auto;padding:0 40px}
+.section-label{font-size:12px;font-weight:700;color:var(--cyan);letter-spacing:1px;text-transform:uppercase;margin-bottom:12px}
+.faq-section h2{font-size:30px;font-weight:800;letter-spacing:-.5px;margin-bottom:40px}
+.faq-item{border-bottom:1px solid rgba(255,255,255,.06);padding:20px 0}
+.faq-item:first-of-type{border-top:1px solid rgba(255,255,255,.06)}
+.faq-q{font-size:16px;font-weight:700;color:var(--white);margin-bottom:10px}
+.faq-a{font-size:14px;color:var(--muted);line-height:1.8}
+.faq-a a{color:var(--cyan)}
+
+/* Platform links */
+.platforms{max-width:960px;margin:0 auto 80px;padding:0 40px}
+.platforms h2{font-size:22px;font-weight:800;margin-bottom:24px}
+.platform-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:14px}
+.platform-card{
+  background:var(--surface);border:1px solid var(--border);border-radius:10px;
+  padding:16px;display:flex;align-items:center;gap:12px;
+  transition:border-color .2s;
+}
+.platform-card:hover{border-color:rgba(6,182,212,.3);text-decoration:none}
+.platform-emoji{font-size:22px}
+.platform-name{font-size:13px;font-weight:700;color:var(--white)}
+.platform-desc{font-size:11px;color:var(--muted)}
+
+footer{border-top:1px solid var(--border);padding:32px 40px;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:12px;font-size:13px;color:var(--muted)}
+footer a{color:var(--muted)}
+footer a:hover{color:var(--white)}
+.footer-links{display:flex;gap:24px}
+@media(max-width:768px){
+  .contact-grid,.platform-grid{grid-template-columns:1fr}
+  .hero{padding:60px 20px 40px}
+  .faq-section,.platforms,.contact-grid{padding:0 20px}
+  nav{padding:0 20px}
+  footer{padding:24px 20px;flex-direction:column}
+}
+</style>
+</head>
+<body>
+
+<nav>
+  <a href="https://ripitlabs.com" class="logo">Rip It <span>Labs</span></a>
+  <a href="https://ripitlabs.com" class="nav-back">← Back to ripitlabs.com</a>
+</nav>
+
+<!-- Hero -->
+<div class="hero">
+  <div class="hero-badge">Support Center</div>
+  <h1>How can we help?</h1>
+  <p>Get help with RILBOT, Strut, SoulCoach, YTax, and all Rip It Labs platforms. Real humans, real answers.</p>
+  <div class="search-wrap">
+    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.35-4.35"/></svg>
+    <input type="text" placeholder="Search for help — e.g. 'reset password', 'billing', 'RILCOIN'..." onkeydown="if(event.key==='Enter'){window.location='mailto:support@ripitlabs.com?subject='+encodeURIComponent(this.value)}"/>
+  </div>
+</div>
+
+<!-- Contact options -->
+<div class="contact-grid">
+  <div class="contact-card">
+    <div class="contact-icon">📧</div>
+    <h3>Email Support</h3>
+    <p>For account issues, billing questions, and general help. We respond within 24 hours on business days.</p>
+    <a href="mailto:support@ripitlabs.com" class="contact-btn">support@ripitlabs.com</a>
+    <div class="contact-badge">Response within 24 hours</div>
+  </div>
+  <div class="contact-card">
+    <div class="contact-icon">💼</div>
+    <h3>Sales & Enterprise</h3>
+    <p>Custom deployments, volume pricing, partnership discussions, and enterprise contracts.</p>
+    <a href="mailto:tim@ripitlabs.com" class="contact-btn">tim@ripitlabs.com</a>
+    <div class="contact-badge">Speak directly with our CEO</div>
+  </div>
+  <div class="contact-card">
+    <div class="contact-icon">⚖️</div>
+    <h3>Legal & Privacy</h3>
+    <p>Data requests, privacy concerns, DMCA notices, legal inquiries, and compliance questions.</p>
+    <a href="mailto:legal@ripitlabs.com" class="contact-btn">legal@ripitlabs.com</a>
+    <div class="contact-badge">Privacy: privacy@ripitlabs.com</div>
+  </div>
+</div>
+
+<!-- FAQ -->
+<div class="faq-section">
+  <div class="section-label">FAQ</div>
+  <h2>Frequently Asked Questions</h2>
+
+  <div class="faq-item">
+    <div class="faq-q">How do I reset my password?</div>
+    <div class="faq-a">On the login page of any Rip It Labs platform, click "Forgot password?" and enter your email. You'll receive a reset link valid for 1 hour. Check your spam folder if it doesn't arrive within 5 minutes.</div>
+  </div>
+
+  <div class="faq-item">
+    <div class="faq-q">What is RILCOIN and how do I use it?</div>
+    <div class="faq-a">RILCOIN is a utility token used to pay for AI agent tasks on RILBOT. Paying with RILCOIN gives you a 20% discount vs. credit card. Connect a Web3 wallet (MetaMask, Coinbase Wallet, or WalletConnect) on <a href="https://rilbot.ripitlabs.com">rilbot.ripitlabs.com</a> to get started.</div>
+  </div>
+
+  <div class="faq-item">
+    <div class="faq-q">How do I request a refund?</div>
+    <div class="faq-a">Refunds are available within 7 days of purchase if you've made fewer than 5 API requests. Email <a href="mailto:support@ripitlabs.com">support@ripitlabs.com</a> with your account email and the charge date. Cryptocurrency payments are generally non-refundable due to the irreversible nature of blockchain transactions.</div>
+  </div>
+
+  <div class="faq-item">
+    <div class="faq-q">How do I cancel my subscription?</div>
+    <div class="faq-a">Log in to your account, go to Settings → Billing, and click "Cancel Subscription." Your access continues until the end of the current billing period. You can also email <a href="mailto:support@ripitlabs.com">support@ripitlabs.com</a> and we'll cancel for you.</div>
+  </div>
+
+  <div class="faq-item">
+    <div class="faq-q">Is my data private? Do you train AI on my data?</div>
+    <div class="faq-a">Your data is never used to train AI models without your explicit consent. Each workspace is fully isolated — other customers cannot access your data. See our <a href="/privacy-policy">Privacy Policy</a> for full details.</div>
+  </div>
+
+  <div class="faq-item">
+    <div class="faq-q">What AI model powers the agents?</div>
+    <div class="faq-a">RILBOT agents are powered by Anthropic's Claude models. We use the latest available model (currently Claude Sonnet 4.6) with domain-specific system prompts that give each agent its specialization.</div>
+  </div>
+
+  <div class="faq-item">
+    <div class="faq-q">How do I get RILBOT on Google Cloud?</div>
+    <div class="faq-a">Visit <a href="https://rilbot.ripitlabs.com/marketplace">rilbot.ripitlabs.com/marketplace</a> and click "Get Started on Google Cloud." You'll need an existing Google Cloud account. Billing is handled through your GCP invoice.</div>
+  </div>
+
+  <div class="faq-item">
+    <div class="faq-q">I found a security vulnerability. How do I report it?</div>
+    <div class="faq-a">Email <a href="mailto:security@ripitlabs.com">security@ripitlabs.com</a> with a description of the vulnerability. We take security reports seriously and will respond within 48 hours. Please do not publicly disclose vulnerabilities before we've had a chance to address them.</div>
+  </div>
+
+  <div class="faq-item">
+    <div class="faq-q">How do I delete my account and data?</div>
+    <div class="faq-a">Email <a href="mailto:privacy@ripitlabs.com">privacy@ripitlabs.com</a> with your account email and the subject "Account Deletion Request." We'll delete your account and personal data within 30 days, as required by our <a href="/privacy-policy">Privacy Policy</a>.</div>
+  </div>
+
+  <div class="faq-item">
+    <div class="faq-q">Do you offer API access?</div>
+    <div class="faq-a">Yes. Business and Enterprise plans include full REST API access. API documentation is available after login. Contact <a href="mailto:tim@ripitlabs.com">tim@ripitlabs.com</a> for enterprise API arrangements.</div>
+  </div>
+</div>
+
+<!-- Platform quick links -->
+<div class="platforms">
+  <h2>Platform-Specific Help</h2>
+  <div class="platform-grid">
+    <a href="https://rilbot.ripitlabs.com" class="platform-card">
+      <div class="platform-emoji">🤖</div>
+      <div>
+        <div class="platform-name">RILBOT</div>
+        <div class="platform-desc">AI Agent Marketplace</div>
+      </div>
+    </a>
+    <a href="https://strut.ripitlabs.com" class="platform-card">
+      <div class="platform-emoji">📦</div>
+      <div>
+        <div class="platform-name">Strut</div>
+        <div class="platform-desc">Asset Management</div>
+      </div>
+    </a>
+    <a href="https://voice.ripitlabs.com" class="platform-card">
+      <div class="platform-emoji">🎙️</div>
+      <div>
+        <div class="platform-name">VoiceStudio</div>
+        <div class="platform-desc">Text-to-Speech</div>
+      </div>
+    </a>
+    <a href="https://tradingbot.ripitlabs.com" class="platform-card">
+      <div class="platform-emoji">📈</div>
+      <div>
+        <div class="platform-name">TradingBot</div>
+        <div class="platform-desc">Algo Trading</div>
+      </div>
+    </a>
+    <a href="https://locallore.ripitlabs.com" class="platform-card">
+      <div class="platform-emoji">🗺️</div>
+      <div>
+        <div class="platform-name">LocalLore</div>
+        <div class="platform-desc">AI History Tours</div>
+      </div>
+    </a>
+    <a href="https://geoblock.ripitlabs.com" class="platform-card">
+      <div class="platform-emoji">🔒</div>
+      <div>
+        <div class="platform-name">GeoBlock</div>
+        <div class="platform-desc">Location Privacy</div>
+      </div>
+    </a>
+    <a href="https://security.ripitlabs.com" class="platform-card">
+      <div class="platform-emoji">🛡️</div>
+      <div>
+        <div class="platform-name">Security</div>
+        <div class="platform-desc">Platform Monitoring</div>
+      </div>
+    </a>
+    <a href="mailto:support@ripitlabs.com" class="platform-card">
+      <div class="platform-emoji">📧</div>
+      <div>
+        <div class="platform-name">Other Apps</div>
+        <div class="platform-desc">Contact support</div>
+      </div>
+    </a>
+  </div>
+</div>
+
+<footer>
+  <span>© 2026 Rip It Labs, LLC. All rights reserved.</span>
+  <div class="footer-links">
+    <a href="/privacy-policy">Privacy Policy</a>
+    <a href="/terms-of-service">Terms of Service</a>
+    <a href="/support">Support</a>
+    <a href="https://ripitlabs.com">Home</a>
+  </div>
+</footer>
+
+</body>
+</html>
