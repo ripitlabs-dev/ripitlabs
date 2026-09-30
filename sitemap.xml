@@ -29,4 +29,6 @@
   <url><loc>https://warden.ripitlabs.com/guide</loc><changefreq>monthly</changefreq><priority>0.7</priority></url>
   <url><loc>https://ripitlabs.com/history.html</loc><lastmod>2026-09-30</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
   <url><loc>https://ripitlabs.com/press.html</loc><lastmod>2026-10-01</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://ripitlabs.com/wiki.html</loc><lastmod>2026-10-01</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://ripitlabs.com/tim-cavin.html</loc><lastmod>2026-10-01</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
 </urlset>
