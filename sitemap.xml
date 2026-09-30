@@ -3,6 +3,8 @@
   <url><loc>https://ripitlabs.com/</loc><changefreq>weekly</changefreq><priority>1.0</priority></url>
   <url><loc>https://rilbot.ripitlabs.com/</loc><changefreq>daily</changefreq><priority>0.9</priority></url>
   <url><loc>https://proofrail.ripitlabs.com/</loc><changefreq>daily</changefreq><priority>0.9</priority></url>
+  <url><loc>https://proofrail.ripitlabs.com/docs</loc><changefreq>weekly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://proofrail.ripitlabs.com/sdk</loc><changefreq>weekly</changefreq><priority>0.7</priority></url>
   <url><loc>https://riloracle.ripitlabs.com/</loc><changefreq>daily</changefreq><priority>0.9</priority></url>
   <url><loc>https://rilchain.ripitlabs.com/</loc><changefreq>daily</changefreq><priority>0.9</priority></url>
   <url><loc>https://carbonx.ripitlabs.com/</loc><changefreq>weekly</changefreq><priority>0.8</priority></url>
@@ -23,4 +25,6 @@
   <url><loc>https://insurancechain.ripitlabs.com/</loc><changefreq>weekly</changefreq><priority>0.7</priority></url>
   <url><loc>https://strut.ripitlabs.com/</loc><changefreq>weekly</changefreq><priority>0.6</priority></url>
   <url><loc>https://locallore.ripitlabs.com/</loc><changefreq>weekly</changefreq><priority>0.6</priority></url>
+  <url><loc>https://warden.ripitlabs.com/</loc><changefreq>weekly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://warden.ripitlabs.com/guide</loc><changefreq>monthly</changefreq><priority>0.7</priority></url>
 </urlset>
